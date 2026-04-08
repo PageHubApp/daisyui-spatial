@@ -1,0 +1,12 @@
+{
+  "name": "@pagehub/daisyui-spatial",
+  "version": "0.1.0",
+  "description": "Density-scaled spatial tokens for DaisyUI 5 — plug into any DaisyUI project to get fluid, adjustable spacing via a single --spacing-density multiplier.",
+  "main": "src/index.css",
+  "files": ["src/"],
+  "keywords": ["daisyui", "spatial", "density", "spacing", "tokens", "fluid", "tailwind"],
+  "license": "MIT",
+  "peerDependencies": {
+    "daisyui": ">=5.0.0"
+  }
+}

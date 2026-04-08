@@ -1,0 +1,263 @@
+/*
+ * @pagehub/daisyui-spatial
+ *
+ * Density-scaled spatial tokens for DaisyUI 5.
+ *
+ * Usage:
+ *   @import "daisyui";
+ *   @import "@pagehub/daisyui-spatial";
+ *
+ * Then set --spacing-density on :root (0.25 = minimal, 1 = default, 2.5 = ultra).
+ * All DaisyUI component spacing scales proportionally.
+ */
+
+/* ─── Spatial scale tokens (fluid clamp × density) ──────────────────────────
+ *
+ * Five tiers that scale from 375px to 1440px viewport, then multiplied
+ * by --spacing-density for global density control.
+ */
+
+@theme inline {
+  /* Spacing utilities: py-space-xl, gap-space-md, px-space-sm, etc. */
+  --spacing-space-xs: var(--space-xs);
+  --spacing-space-sm: var(--space-sm);
+  --spacing-space-md: var(--space-md);
+  --spacing-space-lg: var(--space-lg);
+  --spacing-space-xl: var(--space-xl);
+
+  /* Layout utilities: px-container-x, gap-section, gap-container, max-w-content */
+  --spacing-container-x: var(--container-padding-x);
+  --spacing-container-y: var(--container-padding-y);
+  --spacing-section: var(--section-gap);
+  --spacing-container: var(--container-gap);
+  --max-width-content: var(--content-width);
+
+  /* Radius utilities: rounded-box, rounded-field, rounded-selector */
+  --radius-box: var(--radius-box);
+  --radius-field: var(--radius-field);
+  --radius-selector: var(--radius-selector);
+  --radius-full: var(--radius-full, 9999px);
+}
+
+:root {
+  --spacing-density: 1;
+
+  --space-xs: calc(clamp(0.375rem, 0.25rem + 0.39vw, 0.5rem) * var(--spacing-density));
+  --space-sm: calc(clamp(0.75rem, 0.5rem + 0.75vw, 1rem) * var(--spacing-density));
+  --space-md: calc(clamp(1.5rem, 1rem + 1.5vw, 2rem) * var(--spacing-density));
+  --space-lg: calc(clamp(2.5rem, 1.25rem + 3.75vw, 4rem) * var(--spacing-density));
+  --space-xl: calc(clamp(3.5rem, 1.75rem + 5.25vw, 6rem) * var(--spacing-density));
+}
+
+/* ─── DaisyUI component overrides ───────────────────────────────────────────
+ *
+ * Override DaisyUI's internal spacing vars and hardcoded values
+ * with spatial token references so they scale with --spacing-density.
+ */
+
+/* Button — override internal --btn-p and gap
+ * DaisyUI defaults: xs=.5rem sm=.75rem md=1rem lg=1.25rem xl=1.5rem
+ * Mapped to spatial tokens that produce similar values at density=1 */
+.btn {
+  --btn-p: var(--space-sm);
+  gap: var(--space-xs);
+}
+.btn-xs { --btn-p: var(--space-xs); }
+.btn-sm { --btn-p: calc(var(--space-sm) * 0.8); }
+.btn-md { --btn-p: var(--space-sm); }
+.btn-lg { --btn-p: calc(var(--space-sm) * 1.4); }
+.btn-xl { --btn-p: var(--space-md); }
+
+/* Scale btn height base unit with density */
+.btn {
+  --size-field: calc(0.25rem * var(--spacing-density));
+}
+
+/* Card — override internal --card-p */
+.card-body {
+  --card-p: var(--space-md);
+  gap: var(--space-sm);
+}
+.card-compact .card-body {
+  --card-p: var(--space-sm);
+  gap: var(--space-xs);
+}
+
+/* Hero — override hardcoded padding and gap */
+.hero-content {
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  max-width: var(--content-width, 80rem);
+}
+
+/* Badge — scale with density */
+.badge {
+  gap: calc(var(--space-xs) * 0.5);
+}
+
+/* Navbar — override hardcoded min-height and padding */
+.navbar {
+  min-height: calc(4rem * var(--spacing-density));
+  padding: calc(var(--space-xs) * 0.75);
+}
+
+/* Footer — override gaps */
+.footer {
+  gap: var(--space-md);
+}
+.footer > * {
+  gap: var(--space-xs);
+}
+
+/* Input / Textarea / Select — scale height + padding with density */
+.input,
+.select {
+  --size-field: calc(0.25rem * var(--spacing-density));
+  padding-inline: var(--space-xs);
+}
+.textarea {
+  --size-field: calc(0.25rem * var(--spacing-density));
+  padding-block: calc(var(--space-xs) * 0.75);
+  padding-inline: var(--space-xs);
+}
+
+/* Stat — override padding */
+.stat {
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+  gap: var(--space-xs);
+}
+
+/* Divider — override margin */
+.divider {
+  --divider-m: var(--space-xs);
+  gap: var(--space-xs);
+}
+
+/* Alert — override padding */
+.alert {
+  padding: var(--space-sm);
+  gap: var(--space-xs);
+}
+
+/* Collapse / Accordion — override padding */
+.collapse-title {
+  padding: var(--space-sm);
+}
+.collapse-content {
+  padding-inline: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+/* Table — override cell padding */
+.table th,
+.table td {
+  padding: var(--space-xs) var(--space-sm);
+}
+
+/* List — override gap */
+.list {
+  gap: var(--space-xs);
+}
+
+/* Fieldset — override padding */
+.fieldset {
+  padding: var(--space-sm);
+  gap: var(--space-sm);
+}
+
+/* Breadcrumbs — override gap */
+.breadcrumbs {
+  gap: var(--space-xs);
+}
+
+/* Rating — override gap */
+.rating {
+  gap: calc(var(--space-xs) * 0.25);
+}
+
+/* ─── Additional components ─────────────────────────────────────────────────── */
+
+/* Modal — override padding */
+.modal-box {
+  padding: var(--space-md);
+}
+
+/* Drawer — override width */
+.drawer-side {
+  min-width: calc(16rem * var(--spacing-density));
+}
+
+/* Steps — override gap */
+.steps {
+  gap: var(--space-xs);
+}
+
+/* Timeline — override gap */
+.timeline {
+  gap: var(--space-sm);
+}
+
+/* Chat — override padding and gap */
+.chat-bubble {
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+}
+
+/* Menu — override padding */
+.menu {
+  padding: var(--space-xs);
+  gap: calc(var(--space-xs) * 0.5);
+}
+.menu li > a,
+.menu li > button {
+  padding: var(--space-xs) var(--space-sm);
+}
+
+/* Select — match input sizing */
+.select {
+  padding-inline: var(--space-xs);
+}
+
+/* Checkbox / Radio / Toggle — scale with density */
+.checkbox,
+.radio {
+  width: calc(1.25rem * var(--spacing-density));
+  height: calc(1.25rem * var(--spacing-density));
+}
+
+/* Toast — override gap and padding */
+.toast {
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+}
+
+/* Progress — scale height */
+.progress {
+  height: calc(0.5rem * var(--spacing-density));
+}
+
+/* Tabs — override gap */
+.tabs {
+  gap: calc(var(--space-xs) * 0.5);
+}
+
+/* Carousel — override gap */
+.carousel {
+  gap: var(--space-sm);
+}
+
+/* Skeleton — scale height */
+.skeleton {
+  min-height: calc(1rem * var(--spacing-density));
+}
+
+/* Countdown — override gap */
+.countdown {
+  gap: var(--space-xs);
+}
+
+/* Kbd — override padding */
+.kbd {
+  padding: calc(var(--space-xs) * 0.25) calc(var(--space-xs) * 0.5);
+}
