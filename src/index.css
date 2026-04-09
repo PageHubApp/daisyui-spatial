@@ -25,12 +25,12 @@
   --spacing-space-lg: var(--space-lg);
   --spacing-space-xl: var(--space-xl);
 
-  /* Layout utilities: px-container-x, gap-section, gap-container, max-w-content */
+  /* Layout utilities: px-container-x, gap-section, gap-container, max-w-page */
   --spacing-container-x: var(--container-padding-x);
   --spacing-container-y: var(--container-padding-y);
   --spacing-section: var(--section-gap);
   --spacing-container: var(--container-gap);
-  --max-width-content: var(--content-width);
+  --max-width-page: var(--content-width);
 
   /* Radius utilities: rounded-box, rounded-field, rounded-selector */
   --radius-box: var(--radius-box);
