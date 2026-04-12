@@ -62,11 +62,21 @@
   --btn-p: var(--space-sm);
   gap: var(--space-xs);
 }
-.btn-xs { --btn-p: var(--space-xs); }
-.btn-sm { --btn-p: calc(var(--space-sm) * 0.8); }
-.btn-md { --btn-p: var(--space-sm); }
-.btn-lg { --btn-p: calc(var(--space-sm) * 1.4); }
-.btn-xl { --btn-p: var(--space-md); }
+.btn-xs {
+  --btn-p: var(--space-xs);
+}
+.btn-sm {
+  --btn-p: calc(var(--space-sm) * 0.8);
+}
+.btn-md {
+  --btn-p: var(--space-sm);
+}
+.btn-lg {
+  --btn-p: calc(var(--space-sm) * 1.4);
+}
+.btn-xl {
+  --btn-p: var(--space-md);
+}
 
 /* Scale btn height base unit with density */
 .btn {
@@ -261,4 +271,3 @@
 .kbd {
   padding: calc(var(--space-xs) * 0.25) calc(var(--space-xs) * 0.5);
 }
-
