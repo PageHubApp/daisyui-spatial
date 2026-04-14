@@ -13,12 +13,14 @@
 
 /* ─── Spatial scale tokens (fluid clamp × density) ──────────────────────────
  *
- * Five tiers that scale from 375px to 1440px viewport, then multiplied
+ * Seven tiers that scale from 375px to 1440px viewport, then multiplied
  * by --spacing-density for global density control.
  */
 
 @theme inline {
   /* Spacing utilities: py-space-xl, gap-space-md, px-space-sm, etc. */
+  --spacing-space-3xs: var(--space-3xs);
+  --spacing-space-2xs: var(--space-2xs);
   --spacing-space-xs: var(--space-xs);
   --spacing-space-sm: var(--space-sm);
   --spacing-space-md: var(--space-md);
@@ -42,6 +44,8 @@
 :root {
   --spacing-density: 1;
 
+  --space-3xs: calc(clamp(0.125rem, 0.0625rem + 0.19vw, 0.25rem) * var(--spacing-density));
+  --space-2xs: calc(clamp(0.25rem, 0.125rem + 0.39vw, 0.375rem) * var(--spacing-density));
   --space-xs: calc(clamp(0.375rem, 0.25rem + 0.39vw, 0.5rem) * var(--spacing-density));
   --space-sm: calc(clamp(0.75rem, 0.5rem + 0.75vw, 1rem) * var(--spacing-density));
   --space-md: calc(clamp(1.5rem, 1rem + 1.5vw, 2rem) * var(--spacing-density));
