@@ -26,6 +26,9 @@
   --spacing-space-md: var(--space-md);
   --spacing-space-lg: var(--space-lg);
   --spacing-space-xl: var(--space-xl);
+  --spacing-space-2xl: var(--space-2xl);
+  --spacing-space-3xl: var(--space-3xl);
+  --spacing-space-4xl: var(--space-4xl);
 
   /* Layout utilities: px-container-x, gap-section, gap-container, max-w-page */
   --spacing-container-x: var(--container-padding-x);
@@ -51,6 +54,9 @@
   --space-md: calc(clamp(1.5rem, 1rem + 1.5vw, 2rem) * var(--spacing-density));
   --space-lg: calc(clamp(2.5rem, 1.25rem + 3.75vw, 4rem) * var(--spacing-density));
   --space-xl: calc(clamp(3.5rem, 1.75rem + 5.25vw, 6rem) * var(--spacing-density));
+  --space-2xl: calc(clamp(5rem, 2.5rem + 7.5vw, 8rem) * var(--spacing-density));
+  --space-3xl: calc(clamp(6.5rem, 3.25rem + 9.75vw, 10rem) * var(--spacing-density));
+  --space-4xl: calc(clamp(8rem, 4rem + 12vw, 12rem) * var(--spacing-density));
 }
 
 /* ─── DaisyUI component overrides ───────────────────────────────────────────
