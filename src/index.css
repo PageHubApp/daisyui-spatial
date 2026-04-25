@@ -281,3 +281,59 @@
 .kbd {
   padding: calc(var(--space-xs) * 0.25) calc(var(--space-xs) * 0.5);
 }
+
+/* ─── Composite pattern utilities ──────────────────────────────────────────
+ *
+ * Semantic shortcuts for common section / card / text / button patterns.
+ * Match the modifier definitions in @pagehub/sdk Container/Text/Button.craft.tsx.
+ * Single class in the className expands to a full preset. Override by adding
+ * sibling utilities in the same className (e.g. `section-wrapper bg-primary`).
+ */
+
+@utility section-wrapper {
+  @apply bg-base-100 text-base-content flex flex-col items-center w-full py-space-lg px-container-x;
+}
+
+@utility section-wrapper-dark {
+  @apply bg-base-content text-base-100 flex flex-col items-center w-full py-space-lg px-container-x;
+}
+
+@utility card-surface {
+  @apply bg-base-200 text-base-content rounded-box flex flex-col w-full overflow-hidden;
+}
+
+@utility icon-row {
+  @apply flex flex-row gap-space-xs items-center w-full;
+}
+
+@utility content-col {
+  @apply flex flex-col gap-space-md w-full max-w-page mx-auto;
+}
+
+@utility hero-content-centered {
+  @apply flex flex-col items-center gap-space-md text-center max-w-page mx-auto;
+}
+
+@utility body-text {
+  @apply text-neutral-content text-sm leading-relaxed;
+}
+
+@utility section-heading {
+  @apply font-bold leading-tight text-base-content text-3xl md:text-4xl font-heading;
+}
+
+@utility eyebrow {
+  @apply text-primary font-bold tracking-widest text-xs uppercase;
+}
+
+@utility subhead {
+  @apply text-neutral-content text-lg leading-relaxed max-w-2xl;
+}
+
+@utility cta-responsive {
+  @apply rounded-box px-space-md py-space-xs min-h-12 font-semibold w-full md:w-auto;
+}
+
+@utility cta-outline-responsive {
+  @apply rounded-box px-space-md py-space-xs min-h-12 font-semibold border-base-content/30 text-base-content w-full md:w-auto;
+}
