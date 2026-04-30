@@ -291,27 +291,27 @@
  */
 
 @utility section-wrapper {
-  @apply bg-base-100 text-base-content flex flex-col items-center w-full py-space-lg px-container-x;
+  @apply bg-base-100 text-base-content py-space-lg px-container-x flex w-full flex-col items-center;
 }
 
 @utility section-wrapper-dark {
-  @apply bg-base-content text-base-100 flex flex-col items-center w-full py-space-lg px-container-x;
+  @apply bg-base-content text-base-100 py-space-lg px-container-x flex w-full flex-col items-center;
 }
 
 @utility card-surface {
-  @apply bg-base-200 text-base-content rounded-box flex flex-col w-full overflow-hidden;
+  @apply bg-base-200 text-base-content rounded-box flex w-full flex-col overflow-hidden;
 }
 
 @utility icon-row {
-  @apply flex flex-row gap-space-xs items-center w-full;
+  @apply gap-space-xs flex w-full flex-row items-center;
 }
 
 @utility content-col {
-  @apply flex flex-col gap-space-md w-full max-w-page mx-auto;
+  @apply gap-space-md max-w-page mx-auto flex w-full flex-col;
 }
 
 @utility hero-content-centered {
-  @apply flex flex-col items-center gap-space-md text-center max-w-page mx-auto;
+  @apply gap-space-md max-w-page mx-auto flex flex-col items-center text-center;
 }
 
 @utility body-text {
@@ -319,21 +319,21 @@
 }
 
 @utility section-heading {
-  @apply font-bold leading-tight text-base-content text-3xl md:text-4xl font-heading;
+  @apply text-base-content font-heading text-3xl leading-tight font-bold md:text-4xl;
 }
 
 @utility eyebrow {
-  @apply text-primary font-bold tracking-widest text-xs uppercase;
+  @apply text-primary text-xs font-bold tracking-widest uppercase;
 }
 
 @utility subhead {
-  @apply text-neutral-content text-lg leading-relaxed max-w-2xl;
+  @apply text-neutral-content max-w-2xl text-lg leading-relaxed;
 }
 
 @utility cta-responsive {
-  @apply rounded-box px-space-md py-space-xs min-h-12 font-semibold w-full md:w-auto;
+  @apply rounded-box px-space-md py-space-xs min-h-12 w-full font-semibold md:w-auto;
 }
 
 @utility cta-outline-responsive {
-  @apply rounded-box px-space-md py-space-xs min-h-12 font-semibold border-base-content/30 text-base-content w-full md:w-auto;
+  @apply rounded-box px-space-md py-space-xs border-base-content/30 text-base-content min-h-12 w-full font-semibold md:w-auto;
 }
