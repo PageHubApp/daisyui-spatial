@@ -291,7 +291,7 @@
  */
 
 @utility section-wrapper {
-  @apply bg-base-100 text-base-content py-space-lg px-container-x flex w-full flex-col items-center;
+  @apply py-space-lg px-container-x flex w-full flex-col items-center;
 }
 
 @utility section-wrapper-dark {
@@ -315,7 +315,7 @@
 }
 
 @utility body-text {
-  @apply text-neutral-content text-sm leading-relaxed;
+  @apply text-base-content/70 text-sm leading-relaxed;
 }
 
 @utility section-heading {
@@ -327,7 +327,7 @@
 }
 
 @utility subhead {
-  @apply text-neutral-content max-w-2xl text-lg leading-relaxed;
+  @apply text-base-content/70 max-w-2xl text-lg leading-relaxed;
 }
 
 @utility cta-responsive {
