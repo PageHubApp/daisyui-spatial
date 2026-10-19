@@ -145,6 +145,14 @@
   padding-block: calc(var(--space-xs) * 0.75);
   padding-inline: var(--space-xs);
 }
+/* DaisyUI fields are 14px; iOS Safari zooms the page on focus below 16px. */
+@media (max-width: 767px) {
+  .input:where(:not([data-daisyui="off"] *)),
+  .select:where(:not([data-daisyui="off"] *)),
+  .textarea:where(:not([data-daisyui="off"] *)) {
+    font-size: max(1rem, 16px);
+  }
+}
 
 /* Stat — override padding */
 .stat:where(:not([data-daisyui="off"] *)) {
