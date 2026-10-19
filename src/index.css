@@ -63,222 +63,227 @@
  *
  * Override DaisyUI's internal spacing vars and hardcoded values
  * with spatial token references so they scale with --spacing-density.
+ *
+ * Every selector ends in `:where(:not([data-daisyui="off"] *))`: put
+ * `data-daisyui="off"` on an ancestor to keep these off a subtree that doesn't
+ * use DaisyUI components (its own `.btn` / `.hero-content` / `.toast` keep
+ * their own styles). `:where()` adds no specificity.
  */
 
 /* Button — override internal --btn-p and gap
  * DaisyUI defaults: xs=.5rem sm=.75rem md=1rem lg=1.25rem xl=1.5rem
  * Mapped to spatial tokens that produce similar values at density=1 */
-.btn {
+.btn:where(:not([data-daisyui="off"] *)) {
   --btn-p: var(--space-sm);
   gap: var(--space-xs);
 }
-.btn-xs {
+.btn-xs:where(:not([data-daisyui="off"] *)) {
   --btn-p: var(--space-xs);
 }
-.btn-sm {
+.btn-sm:where(:not([data-daisyui="off"] *)) {
   --btn-p: calc(var(--space-sm) * 0.8);
 }
-.btn-md {
+.btn-md:where(:not([data-daisyui="off"] *)) {
   --btn-p: var(--space-sm);
 }
-.btn-lg {
+.btn-lg:where(:not([data-daisyui="off"] *)) {
   --btn-p: calc(var(--space-sm) * 1.4);
 }
-.btn-xl {
+.btn-xl:where(:not([data-daisyui="off"] *)) {
   --btn-p: var(--space-md);
 }
 
 /* Scale btn height base unit with density */
-.btn {
+.btn:where(:not([data-daisyui="off"] *)) {
   --size-field: calc(0.25rem * var(--spacing-density));
 }
 
 /* Card — override internal --card-p */
-.card-body {
+.card-body:where(:not([data-daisyui="off"] *)) {
   --card-p: var(--space-md);
   gap: var(--space-sm);
 }
-.card-compact .card-body {
+.card-compact .card-body:where(:not([data-daisyui="off"] *)) {
   --card-p: var(--space-sm);
   gap: var(--space-xs);
 }
 
 /* Hero — override hardcoded padding and gap */
-.hero-content {
+.hero-content:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-sm);
   padding: var(--space-sm);
   max-width: var(--content-width, 80rem);
 }
 
 /* Badge — scale with density */
-.badge {
+.badge:where(:not([data-daisyui="off"] *)) {
   gap: calc(var(--space-xs) * 0.5);
 }
 
 /* Navbar — override hardcoded min-height and padding */
-.navbar {
+.navbar:where(:not([data-daisyui="off"] *)) {
   min-height: calc(4rem * var(--spacing-density));
   padding: calc(var(--space-xs) * 0.75);
 }
 
 /* Footer — override gaps */
-.footer {
+.footer:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-md);
 }
-.footer > * {
+.footer > *:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
 }
 
 /* Input / Textarea / Select — scale height + padding with density */
-.input,
-.select {
+.input:where(:not([data-daisyui="off"] *)),
+.select:where(:not([data-daisyui="off"] *)) {
   --size-field: calc(0.25rem * var(--spacing-density));
   padding-inline: var(--space-xs);
 }
-.textarea {
+.textarea:where(:not([data-daisyui="off"] *)) {
   --size-field: calc(0.25rem * var(--spacing-density));
   padding-block: calc(var(--space-xs) * 0.75);
   padding-inline: var(--space-xs);
 }
 
 /* Stat — override padding */
-.stat {
+.stat:where(:not([data-daisyui="off"] *)) {
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
   gap: var(--space-xs);
 }
 
 /* Divider — override margin */
-.divider {
+.divider:where(:not([data-daisyui="off"] *)) {
   --divider-m: var(--space-xs);
   gap: var(--space-xs);
 }
 
 /* Alert — override padding */
-.alert {
+.alert:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-sm);
   gap: var(--space-xs);
 }
 
 /* Collapse / Accordion — override padding */
-.collapse-title {
+.collapse-title:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-sm);
 }
-.collapse-content {
+.collapse-content:where(:not([data-daisyui="off"] *)) {
   padding-inline: var(--space-sm);
   padding-bottom: var(--space-sm);
 }
 
 /* Table — override cell padding */
-.table th,
-.table td {
+.table th:where(:not([data-daisyui="off"] *)),
+.table td:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-xs) var(--space-sm);
 }
 
 /* List — override gap */
-.list {
+.list:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
 }
 
 /* Fieldset — override padding */
-.fieldset {
+.fieldset:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-sm);
   gap: var(--space-sm);
 }
 
 /* Breadcrumbs — override gap */
-.breadcrumbs {
+.breadcrumbs:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
 }
 
 /* Rating — override gap */
-.rating {
+.rating:where(:not([data-daisyui="off"] *)) {
   gap: calc(var(--space-xs) * 0.25);
 }
 
 /* ─── Additional components ─────────────────────────────────────────────────── */
 
 /* Modal — override padding */
-.modal-box {
+.modal-box:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-md);
 }
 
 /* Drawer — override width */
-.drawer-side {
+.drawer-side:where(:not([data-daisyui="off"] *)) {
   min-width: calc(16rem * var(--spacing-density));
 }
 
 /* Steps — override gap */
-.steps {
+.steps:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
 }
 
 /* Timeline — override gap */
-.timeline {
+.timeline:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-sm);
 }
 
 /* Chat — override padding and gap */
-.chat-bubble {
+.chat-bubble:where(:not([data-daisyui="off"] *)) {
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
 }
 
 /* Menu — override padding */
-.menu {
+.menu:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-xs);
   gap: calc(var(--space-xs) * 0.5);
 }
-.menu li > a,
-.menu li > button {
+.menu li > a:where(:not([data-daisyui="off"] *)),
+.menu li > button:where(:not([data-daisyui="off"] *)) {
   padding: var(--space-xs) var(--space-sm);
 }
 
 /* Select — match input sizing */
-.select {
+.select:where(:not([data-daisyui="off"] *)) {
   padding-inline: var(--space-xs);
 }
 
 /* Checkbox / Radio / Toggle — scale with density */
-.checkbox,
-.radio {
+.checkbox:where(:not([data-daisyui="off"] *)),
+.radio:where(:not([data-daisyui="off"] *)) {
   width: calc(1.25rem * var(--spacing-density));
   height: calc(1.25rem * var(--spacing-density));
 }
 
 /* Toast — override gap and padding */
-.toast {
+.toast:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
   padding: var(--space-sm);
 }
 
 /* Progress — scale height */
-.progress {
+.progress:where(:not([data-daisyui="off"] *)) {
   height: calc(0.5rem * var(--spacing-density));
 }
 
 /* Tabs — override gap */
-.tabs {
+.tabs:where(:not([data-daisyui="off"] *)) {
   gap: calc(var(--space-xs) * 0.5);
 }
 
 /* Carousel — override gap */
-.carousel {
+.carousel:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-sm);
 }
 
 /* Skeleton — scale height */
-.skeleton {
+.skeleton:where(:not([data-daisyui="off"] *)) {
   min-height: calc(1rem * var(--spacing-density));
 }
 
 /* Countdown — override gap */
-.countdown {
+.countdown:where(:not([data-daisyui="off"] *)) {
   gap: var(--space-xs);
 }
 
 /* Kbd — override padding */
-.kbd {
+.kbd:where(:not([data-daisyui="off"] *)) {
   padding: calc(var(--space-xs) * 0.25) calc(var(--space-xs) * 0.5);
 }
 
